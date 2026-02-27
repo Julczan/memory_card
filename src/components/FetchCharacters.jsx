@@ -21,7 +21,7 @@ const CharacterImage = () => {
   const { imageUrl } = useFetchCharacters();
 
   if (imageUrl) {
-    imageUrl.map((obj) => console.log(obj.image));
+    imageUrl.map((obj) => console.log(obj.name));
   }
 };
 

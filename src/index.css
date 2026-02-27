@@ -66,3 +66,15 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+:root {
+  --background-dark: black;
+}
+
+body {
+  background-color: var(--background-dark);
+}
+
+.character-card {
+  color: white;
+}

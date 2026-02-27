@@ -4,7 +4,8 @@ const useFetchCharacters = () => {
   const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character/[1,2,3,7,6]")
+    const array = [1, 2, 3, 4];
+    fetch(`https://rickandmortyapi.com/api/character/${array}`)
       .then((response) => {
         if (response.status >= 400) {
           throw new Error("server error");
@@ -17,12 +18,12 @@ const useFetchCharacters = () => {
   return { imageUrl };
 };
 
-const CharacterImage = () => {
-  const { imageUrl } = useFetchCharacters();
+// const CharacterImage = () => {
+//   const { imageUrl } = useFetchCharacters();
 
-  if (imageUrl) {
-    imageUrl.map((obj) => console.log(obj.name));
-  }
-};
+//   if (imageUrl) {
+//     return imageUrl.map((obj) => <img src={obj.image}></img>);
+//   }
+// };
 
-export default CharacterImage;
+export default useFetchCharacters;

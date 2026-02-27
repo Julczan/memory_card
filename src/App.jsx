@@ -1,7 +1,7 @@
-import CharacterImage from "./components/FetchCharacters";
+import CharacterCards from "./components/CharacterCards";
 
 function App() {
-  return <CharacterImage />;
+  return <CharacterCards />;
 }
 
 export default App;

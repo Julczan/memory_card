@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import shuffleArray from "./shuffleArray";
 
 const useFetchCharacters = () => {
   const [imageUrl, setImageUrl] = useState(null);
@@ -18,12 +19,13 @@ const useFetchCharacters = () => {
   return { imageUrl };
 };
 
-// const CharacterImage = () => {
-//   const { imageUrl } = useFetchCharacters();
+const useCharacterArray = () => {
+  const { imageUrl } = useFetchCharacters();
 
-//   if (imageUrl) {
-//     return imageUrl.map((obj) => <img src={obj.image}></img>);
-//   }
-// };
+  if (imageUrl) {
+    shuffleArray(imageUrl);
+    return imageUrl;
+  }
+};
 
-export default useFetchCharacters;
+export default useCharacterArray;

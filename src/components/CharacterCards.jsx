@@ -1,13 +1,12 @@
-import useFetchCharacters from "./FetchCharacters";
+import useCharacterArray from "./FetchCharacters";
 
 function CharacterCards() {
-  const { imageUrl } = useFetchCharacters();
+  const characterArr = useCharacterArray();
 
-  if (imageUrl) {
-    return imageUrl.map((obj) => (
-      <div className="character-card" key={obj.id}>
+  if (characterArr) {
+    return characterArr.map((obj) => (
+      <div key={obj.id}>
         <img src={obj.image}></img>
-        <p>{obj.name}</p>
       </div>
     ));
   }

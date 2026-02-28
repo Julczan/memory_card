@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import shuffleArray from "./shuffleArray";
 
 const useFetchCharacters = () => {
   const [imageUrl, setImageUrl] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const array = [1, 2, 3, 4];
@@ -13,19 +14,12 @@ const useFetchCharacters = () => {
         }
         return response.json();
       })
-      .then((response) => setImageUrl(response));
+      .then((response) => setImageUrl(response))
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false));
   }, []);
 
-  return { imageUrl };
+  return { imageUrl, error, loading };
 };
 
-const useCharacterArray = () => {
-  const { imageUrl } = useFetchCharacters();
-
-  if (imageUrl) {
-    shuffleArray(imageUrl);
-    return imageUrl;
-  }
-};
-
-export default useCharacterArray;
+export default useFetchCharacters;

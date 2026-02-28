@@ -1,15 +1,16 @@
-import useCharacterArray from "./FetchCharacters";
+import useFetchCharacters from "./FetchCharacters";
 
 function CharacterCards() {
-  const characterArr = useCharacterArray();
+  const { imageUrl, error, loading } = useFetchCharacters();
 
-  if (characterArr) {
-    return characterArr.map((obj) => (
-      <div key={obj.id}>
-        <img src={obj.image}></img>
-      </div>
-    ));
-  }
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>A network error was encountered</p>;
+
+  return imageUrl.map((obj) => (
+    <div key={obj.id}>
+      <img src={obj.image}></img>
+    </div>
+  ));
 }
 
 export default CharacterCards;

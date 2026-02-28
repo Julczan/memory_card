@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useFetchCharacters = () => {
-  const [imageUrl, setImageUrl] = useState(null);
+  const [characterInfo, setCharacterInfo] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -14,12 +14,12 @@ const useFetchCharacters = () => {
         }
         return response.json();
       })
-      .then((response) => setImageUrl(response))
+      .then((response) => setCharacterInfo(response))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, []);
 
-  return { imageUrl, error, loading };
+  return { characterInfo, error, loading };
 };
 
 export default useFetchCharacters;

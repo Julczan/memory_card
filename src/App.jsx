@@ -8,6 +8,7 @@ import DisplayMessage from "./components/DisplayMessage";
 function App() {
   const [clicked, setClicked] = useState([]);
   const [isLost, setIsLost] = useState(false);
+  const [bestScore, setBestScore] = useState(0);
 
   const { characterInfo, error, loading } = useFetchCharacters();
 
@@ -20,6 +21,11 @@ function App() {
     }
   }
 
+  function handleNewRound() {
+    setClicked([]);
+    setIsLost(false);
+  }
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
 
@@ -30,11 +36,12 @@ function App() {
   shuffleArray(characterInfo);
 
   const score = clicked.length;
+  if (score > bestScore) setBestScore(score);
 
   return (
     <>
-      {isLost && <DisplayMessage state={"lost"} />}
-      <Counter score={score} />
+      {isLost && <DisplayMessage state={"lost"} handleClick={handleNewRound} />}
+      <Counter score={score} bestScore={bestScore} />
       {characterInfo.map((character) => (
         <CharacterCards
           key={character.id}

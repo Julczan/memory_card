@@ -26,8 +26,9 @@ function App() {
     setIsLost(false);
   }
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>A network error was encountered</p>;
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error)
+    return <div className="error">A network error was encountered</div>;
 
   if (clicked.length === characterInfo.length) {
     return <DisplayMessage state={"won"} handleClick={handleNewRound} />;

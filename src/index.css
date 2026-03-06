@@ -86,6 +86,11 @@ body {
   font-family: "Wubba Lubba Dub Dub";
 }
 
+.loading,
+.error {
+  color: white;
+}
+
 .character-card {
   font-weight: bold;
   color: white;

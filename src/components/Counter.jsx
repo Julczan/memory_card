@@ -1,6 +1,6 @@
 function Counter({ score, bestScore }) {
   return (
-    <div className="character-card">
+    <div className="counter">
       <p>Best Score: {bestScore}</p>
       <p>Current Score: {score}</p>
     </div>

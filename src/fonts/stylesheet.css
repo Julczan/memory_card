@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Wubba Lubba Dub Dub";
+  src:
+    url("WubbaLubbaDubDubRegular.woff2") format("woff2"),
+    url("WubbaLubbaDubDubRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

@@ -30,7 +30,11 @@ function App() {
   if (error) return <p>A network error was encountered</p>;
 
   if (clicked.length === characterInfo.length) {
-    return <DisplayMessage state={"won"} />;
+    return <DisplayMessage state={"won"} handleClick={handleNewRound} />;
+  }
+
+  if (isLost) {
+    return <DisplayMessage state={"lost"} handleClick={handleNewRound} />;
   }
 
   shuffleArray(characterInfo);
@@ -40,16 +44,17 @@ function App() {
 
   return (
     <>
-      {isLost && <DisplayMessage state={"lost"} handleClick={handleNewRound} />}
       <Counter score={score} bestScore={bestScore} />
-      {characterInfo.map((character) => (
-        <CharacterCards
-          key={character.id}
-          handleClick={() => handleClick(character.id)}
-          img={character.image}
-          name={character.name}
-        />
-      ))}
+      <div className="cards">
+        {characterInfo.map((character) => (
+          <CharacterCards
+            key={character.id}
+            handleClick={() => handleClick(character.id)}
+            img={character.image}
+            name={character.name}
+          />
+        ))}
+      </div>
     </>
   );
 }

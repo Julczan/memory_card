@@ -40,11 +40,12 @@ function App() {
   shuffleArray(characterInfo);
 
   const score = clicked.length;
+  const maxScore = characterInfo.length;
   if (score > bestScore) setBestScore(score);
 
   return (
     <>
-      <Counter score={score} bestScore={bestScore} />
+      <Counter score={score} bestScore={bestScore} maxScore={maxScore} />
       <div className="cards">
         {characterInfo.map((character) => (
           <CharacterCards

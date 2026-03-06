@@ -1,8 +1,8 @@
 function DisplayMessage({ state, handleClick }) {
   return (
-    <dialog open>
+    <div className="message">
       You {state}!<button onClick={handleClick}>Play again!</button>
-    </dialog>
+    </div>
   );
 }
 

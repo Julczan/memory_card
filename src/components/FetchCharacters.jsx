@@ -6,7 +6,7 @@ const useFetchCharacters = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const array = [1, 2, 3, 4];
+    const array = [1, 2, 3, 4, 10, 21, 55, 12, 99, 56];
     fetch(`https://rickandmortyapi.com/api/character/${array}`)
       .then((response) => {
         if (response.status >= 400) {

@@ -30,10 +30,6 @@ function App() {
   if (error)
     return <div className="error">A network error was encountered</div>;
 
-  if (clicked.length === characterInfo.length) {
-    return <DisplayMessage state={"won"} handleClick={handleNewRound} />;
-  }
-
   if (isLost) {
     return <DisplayMessage state={"lost"} handleClick={handleNewRound} />;
   }
@@ -42,7 +38,12 @@ function App() {
 
   const score = clicked.length;
   const maxScore = characterInfo.length;
+
   if (score > bestScore) setBestScore(score);
+
+  if (score === maxScore) {
+    return <DisplayMessage state={"won"} handleClick={handleNewRound} />;
+  }
 
   return (
     <>

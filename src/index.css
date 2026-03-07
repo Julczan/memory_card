@@ -77,8 +77,29 @@ h6 {
   font-display: swap;
 }
 
+@keyframes pop-in {
+  from {
+    transform: scale(0);
+    opacity: 0.1;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
 :root {
-  --background-dark: black;
+  --background-dark: rgba(0, 0, 0, 0.796);
 }
 
 body {
@@ -124,6 +145,7 @@ img {
   padding: 20px;
   border-radius: 10px;
   margin: 1em;
+  animation: slide-in 400ms;
 }
 
 .portal {
@@ -172,11 +194,11 @@ img {
   opacity: 1;
 }
 
-.message {
-  background-image: url(assets/wp3277676-rick-and-morty-4k-wallpapers_ackf98_ar_1_1\,c_fill\,g_auto__c_scale\,w_1400.png);
+.message-lost,
+.message-won {
   background-position: bottom left;
-  width: 400px;
-  height: 400px;
+  width: 600px;
+  height: 600px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -186,4 +208,26 @@ img {
   color: white;
   justify-self: center;
   margin-top: 2em;
+  animation: pop-in 400ms;
+}
+
+.message-lost {
+  background-image: url(assets/wp3277676-rick-and-morty-4k-wallpapers_ackf98_ar_1_1\,c_fill\,g_auto__c_scale\,w_1400.png);
+}
+
+.message-won {
+  background-image: url(assets/wp3277659-rick-and-morty-4k-wallpapers_l2zyns_ar_1_1\,c_fill\,g_auto__c_scale\,w_767.jpg);
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  background-color: #1a9042;
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
 }

@@ -121,17 +121,19 @@ body {
   gap: 20px;
   flex-direction: column;
   max-width: 300px;
-  margin: 1em;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background: linear-gradient(45deg, #1a1a1a, #262626);
+  align-items: center;
 }
 
 img {
-  object-fit: scale-down;
+  width: 250px;
+  height: 250px;
 }
 
 .cards {
   display: grid;
+  gap: 2em;
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }

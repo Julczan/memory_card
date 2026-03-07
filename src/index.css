@@ -199,8 +199,8 @@ img {
 .message-lost,
 .message-won {
   background-position: bottom left;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -214,11 +214,11 @@ img {
 }
 
 .message-lost {
-  background-image: url(assets/wp3277676-rick-and-morty-4k-wallpapers_ackf98_ar_1_1\,c_fill\,g_auto__c_scale\,w_1400.png);
+  background-image: url(assets/wp3277676-rick-and-morty-4k-wallpapers_mbetqh_ar_1_1\,c_fill\,g_auto__c_scale\,w_570.png);
 }
 
 .message-won {
-  background-image: url(assets/wp3277659-rick-and-morty-4k-wallpapers_l2zyns_ar_1_1\,c_fill\,g_auto__c_scale\,w_767.jpg);
+  background-image: url(assets/wp3277659-rick-and-morty-4k-wallpapers_l2zyns_ar_1_1\,c_fill\,g_auto__c_scale\,w_530.jpg);
 }
 
 button {

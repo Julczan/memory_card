@@ -1,7 +1,7 @@
 function randomNumbers() {
   let min = 1;
   let max = 120;
-  let count = 3;
+  let count = 10;
   let unique = new Set();
 
   while (unique.size < count) {

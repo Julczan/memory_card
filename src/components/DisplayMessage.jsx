@@ -5,9 +5,11 @@ function DisplayMessage({ state, handleClick }) {
   }
 
   return (
-    <div className={messageClass}>
-      You {state}!<button onClick={handleClick}>Play again!</button>
-    </div>
+    <main>
+      <div className={messageClass}>
+        You {state}!<button onClick={handleClick}>Play again!</button>
+      </div>
+    </main>
   );
 }
 

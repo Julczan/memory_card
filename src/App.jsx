@@ -46,7 +46,7 @@ function App() {
   }
 
   return (
-    <>
+    <main>
       <Counter score={score} bestScore={bestScore} maxScore={maxScore} />
       <div className="cards">
         {characterInfo.map((character) => (
@@ -58,7 +58,7 @@ function App() {
           />
         ))}
       </div>
-    </>
+    </main>
   );
 }
 
